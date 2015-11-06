@@ -2055,7 +2055,7 @@ var ag;
                 if (!value) {
                     return false;
                 }
-                var valueLowerCase = value.toString().toLowerCase();
+                var valueLowerCase = value.toString();
                 switch (this.filterType) {
                     case CONTAINS:
                         return valueLowerCase.indexOf(this.filterText) >= 0;
@@ -2118,7 +2118,7 @@ var ag;
                 }
                 var newFilterText;
                 if (filterText !== null && filterText !== undefined) {
-                    newFilterText = filterText.toLowerCase();
+                    newFilterText = filterText;
                 }
                 else {
                     newFilterText = null;
@@ -2148,7 +2148,7 @@ var ag;
                     setFilter: function (filter) {
                         filter = utils.makeNull(filter);
                         if (filter) {
-                            that.filterText = filter.toLowerCase();
+                            that.filterText = filter;
                             that.eFilterTextField.value = filter;
                         }
                         else {
@@ -3574,8 +3574,7 @@ var ag;
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var ag;
 (function (ag) {

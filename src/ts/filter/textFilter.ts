@@ -78,7 +78,7 @@ module ag.grid {
             if (!value) {
                 return false;
             }
-            var valueLowerCase = value.toString().toLowerCase();
+            var valueLowerCase = value.toString();
             switch (this.filterType) {
                 case CONTAINS:
                     return valueLowerCase.indexOf(this.filterText) >= 0;
@@ -147,7 +147,7 @@ module ag.grid {
             }
             var newFilterText: string;
             if (filterText!==null && filterText!==undefined) {
-                newFilterText = filterText.toLowerCase();
+                newFilterText = filterText;
             } else {
                 newFilterText = null;
             }
@@ -179,7 +179,7 @@ module ag.grid {
                     filter = utils.makeNull(filter);
 
                     if (filter) {
-                        that.filterText = filter.toLowerCase();
+                        that.filterText = filter;
                         that.eFilterTextField.value = filter;
                     } else {
                         that.filterText = null;
@@ -218,4 +218,3 @@ module ag.grid {
         }
     }
 }
-
